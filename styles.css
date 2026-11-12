@@ -559,6 +559,10 @@ ul, ol { list-style: none; }
 .form input:focus, .form textarea:focus { background: var(--tile-hover); box-shadow: inset 0 0 0 1.5px var(--accent); }
 .form .btn { justify-self: start; margin-top: 4px; }
 .form .is-invalid { box-shadow: inset 0 0 0 1.5px #ff6b6b; }
+.form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form .btn.is-sending { opacity: .7; pointer-events: none; }
+.form .btn.is-sending svg { animation: sendPulse .8s ease-in-out infinite alternate; }
+@keyframes sendPulse { to { transform: translate(4px, -4px); opacity: .4; } }
 
 /* toast */
 .toast {

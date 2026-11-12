@@ -178,18 +178,49 @@
   lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lightbox-close')) closeLb(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
-  /* ---------- 6. contact form (not connected yet) ---------- */
-  $('#contact-form').addEventListener('submit', e => {
+  /* ---------- 6. contact form → email via FormSubmit (no backend needed) ---------- */
+  const form = $('#contact-form');
+  const sendBtn = $('button[type="submit"]', form);
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const f = e.currentTarget;
     let ok = true;
-    $$('[required]', f).forEach(i => {
+    $$('[required]', form).forEach(i => {
       const bad = !i.value.trim() || (i.type === 'email' && !/^\S+@\S+\.\S+$/.test(i.value));
       i.classList.toggle('is-invalid', bad);
       if (bad) ok = false;
     });
-    toast(ok ? 'Form is not connected yet — coming soon' : 'Please fill in the highlighted fields');
+    if (!ok) return toast('Please fill in the highlighted fields');
+    if (form.elements._honey.value) return toast('Thanks! Your message was sent.'); // bot
+
+    const data = Object.fromEntries(new FormData(form));
+    delete data._honey;
+    data._subject = `Portfolio: new message from ${data.name}`;
+    data._template = 'table';
+
+    sendBtn.disabled = true;
+    sendBtn.classList.add('is-sending');
+    try {
+      const res = await fetch(form.dataset.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (res.ok && String(out.success) === 'true') {
+        form.reset();
+        toast('Thanks! Your message was sent — I reply within one day.');
+      } else {
+        throw new Error(out.message || res.status);
+      }
+    } catch (err) {
+      toast('Sorry, sending failed. Please email me directly: gordrak2017@yandex.com');
+      console.warn('contact form:', err);
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.classList.remove('is-sending');
+    }
   });
+  $$('[required]', form).forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
 
   /* ---------- 7. specular glow follows the pointer ---------- */
   const glass = $$('.glass');
