@@ -213,7 +213,7 @@
         throw new Error(out.message || res.status);
       }
     } catch (err) {
-      toast('Sorry, sending failed. Please email me directly: gordrak2017@yandex.com');
+      toast('Sorry, sending failed. Please email me directly: gor.khachatryan03@yandex.ru');
       console.warn('contact form:', err);
     } finally {
       sendBtn.disabled = false;
