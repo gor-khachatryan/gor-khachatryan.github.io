@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gor Khachatryan — Shopify Developer | Store Design &amp; Development</title>
+  <meta name="description" content="I design and build Shopify stores that look like real brands — not templates. Custom themes and sections, store setup and redesigns.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%23ffb547%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2734%27 text-anchor=%27middle%27 fill=%27%231a1203%27%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // apply saved theme before paint
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- ===== Background: color blobs + vertical lines with falling light ===== -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+    <div class="grid"></div>
+    <div class="lines"></div>
+  </div>
+
+  <div class="layout">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav glass" aria-label="Sections">
+      <button class="nav-btn theme-btn" type="button" aria-label="Toggle light / dark theme">
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-btn" href="#about" data-section="about">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-btn" href="#experience" data-section="experience">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+        <span>Resume</span>
+      </a>
+      <a class="nav-btn" href="#portfolio" data-section="portfolio">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+        <span>Works</span>
+      </a>
+      <a class="nav-btn" href="#contact" data-section="contact">
+        <svg viewBox="0 0 24 24"><path d="M22 3 11 14"/><path d="M22 3 15 21l-4-7-7-4z"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <!-- ===== Profile card ===== -->
+    <aside class="card glass">
+      <div class="card-top">
+        <div class="avatar">
+          <img src="assets/photo.jpg?v=3" alt="Gor Khachatryan" width="320" height="320">
+        </div>
+        <span class="status"><i></i>Available for projects</span>
+      </div>
+
+      <h1 class="name">Gor Khachatryan</h1>
+      <p class="role"><span class="typed" data-words="Shopify Developer|Store Design &amp; Development|Custom Shopify Themes|Brand-level Design"></span><span class="caret">|</span></p>
+
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/gor-kh/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a></li>
+        <li><a href="https://www.behance.net/gorkh" target="_blank" rel="noopener" aria-label="Behance" title="Behance"><svg viewBox="0 0 24 24"><path d="M3 6h5.5a3 3 0 0 1 0 6H3zM3 12h6a3 3 0 0 1 0 6H3zM14 7h6M14.5 14.5h7a3.5 3.5 0 1 0-7 0zm0 0a3.5 3.5 0 0 0 6.5 1.8"/></svg></a></li>
+        <li><a href="https://www.instagram.com/gor.kh_/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a></li>
+        <li><a href="mailto:gordrak2017@yandex.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></a></li>
+      </ul>
+
+      <ul class="meta">
+        <li><span>Local time</span><b><time id="clock">--:--</time> · GMT+4</b></li>
+        <li><span>Shopify</span><b>since Nov 2025</b></li>
+        <li><span>Design</span><b>2021 — 2025</b></li>
+        <li><span>Based in</span><b>Yerevan · Remote</b></li>
+      </ul>
+
+      <div class="card-actions">
+        <a class="btn btn-ghost" href="#" data-toast="CV coming soon">
+          Download CV
+          <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        </a>
+        <a class="btn btn-solid" href="#contact" data-section="contact">
+          Contact me
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ===== Content panel ===== -->
+    <main class="panel glass">
+      <div class="panel-scroll">
+
+        <!-- ================= ABOUT ================= -->
+        <section class="section is-active" id="about">
+          <h2 class="h2">About me</h2>
+          <p class="lead">I design and build <strong>Shopify stores that look like real brands — not templates.</strong></p>
+          <p class="lead lead-2">From 2021 to 2025 I worked as a brand and motion designer, creating identities, ad visuals and motion content for businesses, mostly in the European market. I've also planned and run Meta Ads campaigns, so I know what happens before a customer lands on a store. Since late 2025 I've moved into Shopify development — and now I bring it all together: brand-level design, the technical skills to build it in Shopify, and an understanding of the marketing around it.</p>
+
+          <dl class="facts">
+            <div><dt>Based in</dt><dd>Yerevan, Armenia</dd></div>
+            <div><dt>Work</dt><dd>Hybrid · Remote</dd></div>
+            <div><dt>Focus</dt><dd>Shopify · Liquid · JS</dd></div>
+            <div><dt>Freelance</dt><dd class="ok">Open to projects</dd></div>
+          </dl>
+
+          <!-- Skills -->
+          <h3 class="h3">Skills</h3>
+          <p class="sub">What I can build for you:</p>
+          <div class="services">
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+              <h4>Custom themes &amp; sections</h4>
+              <p>Shopify themes and sections built with Liquid, HTML, CSS and JavaScript.</p>
+            </article>
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16l-1.5 12a2 2 0 0 1-2 1.8h-9a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+              <h4>Store setup</h4>
+              <p>Products, collections, navigation and mega menus — a store that is easy to browse.</p>
+            </article>
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+              <h4>Store redesigns</h4>
+              <p>Refreshing existing stores — clean, modern and mobile-first.</p>
+            </article>
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M15 4v16M18 9h0M18 12h0"/></svg>
+              <h4>Product pages &amp; carts</h4>
+              <p>Product pages, cart drawers and smooth scroll animations.</p>
+            </article>
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <h4>No-code theme settings</h4>
+              <p>Settings you can change yourself in the theme editor, without touching code.</p>
+            </article>
+            <article class="tile">
+              <svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg>
+              <h4>Launch videos &amp; ad creatives</h4>
+              <p>Promo videos and ad creatives for your store launch — from my motion design background.</p>
+            </article>
+          </div>
+
+          <!-- Core skills -->
+          <h3 class="h3">Core skills</h3>
+          <div class="skill-groups">
+            <div>
+              <h5>Top skills</h5>
+              <ul class="chips"><li class="top">Shopify</li><li class="top">Shopify Development</li><li class="top">Web Design</li><li class="top">E-Commerce</li><li class="top">Meta Ads</li></ul>
+            </div>
+            <div>
+              <h5>Development</h5>
+              <ul class="chips"><li>Liquid</li><li>HTML5</li><li>CSS</li><li>JavaScript</li><li>Responsive Web Design</li><li>User Interface Design</li><li>WordPress</li></ul>
+            </div>
+            <div>
+              <h5>Design</h5>
+              <ul class="chips"><li>Branding</li><li>Rebranding</li><li>Typography</li><li>Layout Design</li><li>Social Media Design</li><li>Motion Graphics</li></ul>
+            </div>
+            <div>
+              <h5>Marketing</h5>
+              <ul class="chips"><li>Digital Marketing</li><li>Social Media Marketing</li><li>Advertising</li><li>Audience Targeting</li><li>Campaign Analysis</li><li>Content Planning</li></ul>
+            </div>
+          </div>
+
+          <!-- Software -->
+          <h3 class="h3">Software</h3>
+          <ul class="apps">
+            <li style="--v:90; --c:#31a8ff; --bgc:#001e36"><span class="app">Ps</span><div><h5>Photoshop</h5><p>Design</p></div><b>90%</b></li>
+            <li style="--v:90; --c:#ff9a00; --bgc:#330000"><span class="app">Ai</span><div><h5>Illustrator</h5><p>Illustration</p></div><b>90%</b></li>
+            <li style="--v:80; --c:#d291ff; --bgc:#00005b"><span class="app">Ae</span><div><h5>After Effects</h5><p>Animation</p></div><b>80%</b></li>
+            <li style="--v:80; --c:#9999ff; --bgc:#00005b"><span class="app">Pr</span><div><h5>Premiere Pro</h5><p>Video editing</p></div><b>80%</b></li>
+            <li style="--v:80; --c:#00e4bb; --bgc:#00005b"><span class="app">Au</span><div><h5>Audition</h5><p>Audio editing</p></div><b>80%</b></li>
+          </ul>
+
+          <!-- Hobbies -->
+          <h3 class="h3">Hobbies</h3>
+          <ul class="hobbies">
+            <li><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg>Reading</li>
+            <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>Movies</li>
+            <li><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 11v3M5.5 12.5h3M15 12h.01M18 12h.01"/></svg>Games</li>
+            <li><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Exploring everything</li>
+          </ul>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section class="section" id="experience">
+          <h2 class="h2">Experience</h2>
+
+          <h3 class="h3">Work experience</h3>
+          <ol class="timeline">
+            <li>
+              <span class="logo logo-mark"><svg viewBox="0 0 24 24"><path d="M4 7h16l-1.5 12a2 2 0 0 1-2 1.8h-9a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+              <div>
+                <span class="date">Nov 2025 — Present</span>
+                <h4>Shopify Developer</h4>
+                <p class="where">Freelance · Yerevan, Armenia · Remote</p>
+                <p>Designing and developing Shopify stores and custom themes.</p>
+                <ul class="dots">
+                  <li>Custom theme development (Liquid, HTML, CSS, JavaScript)</li>
+                  <li>Store structure, navigation and mega menus</li>
+                  <li>Mobile-first design, animations and no-code theme settings</li>
+                  <li>Promo videos and ad creatives for store launches</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="logo logo-light"><img src="assets/logos/44factory.png" alt="44 Factory" loading="lazy"></span>
+              <div>
+                <span class="date">Jun 2021 — 2025</span>
+                <h4>Graphic &amp; Motion Designer</h4>
+                <p class="where">44 Factory (formerly Wearm Digital) · Full-time · Yerevan · Hybrid</p>
+                <p>Brand identities, motion content and social media visuals for businesses, primarily in the European market — minimalist, impactful design that strengthens brand presence.</p>
+                <ul class="dots">
+                  <li>Brand identity &amp; logo systems</li>
+                  <li>SMM visual content for campaigns</li>
+                  <li>Motion graphics for digital ads and short-form content</li>
+                  <li>Remote collaboration with marketing and creative teams</li>
+                </ul>
+                <p class="note">This is where I learned to think like a brand — the foundation I now bring to every Shopify store I build.</p>
+              </div>
+            </li>
+            <li>
+              <span class="logo"><img src="assets/logos/arsus.png" alt="Arsus Group" loading="lazy"></span>
+              <div>
+                <span class="date">Jul — Sep 2023</span>
+                <h4>Digital Marketing Specialist</h4>
+                <p class="where">Arsus Group · Design-focused role · Yerevan</p>
+                <ul class="dots">
+                  <li>Social media content and ad visuals for multiple brands</li>
+                  <li>Planned and ran paid campaigns (Meta Ads)</li>
+                  <li>Managed and optimized brand pages</li>
+                  <li>Performance analysis and reporting</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="logo"><img src="assets/logos/targeting.png" alt="Targeting Agency" loading="lazy"></span>
+              <div>
+                <span class="date">Feb 2022</span>
+                <h4>Graphic Designer · Internship</h4>
+                <p class="where">Targeting Agency · Yerevan</p>
+                <p>Social media visuals for real client campaigns with the SMM team — fast-paced content production for performance marketing.</p>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="h3">Education</h3>
+          <ol class="timeline">
+            <li>
+              <span class="logo logo-mark"><svg viewBox="0 0 24 24"><path d="M2 9 12 4l10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span>
+              <div>
+                <span class="date">Nov 2025 — 2026</span>
+                <h4>Shopify E-commerce Design &amp; Development</h4>
+                <p class="where">Training · Shopify Development &amp; UI/UX Design</p>
+              </div>
+            </li>
+            <li>
+              <span class="logo logo-dark"><img src="assets/logos/wearm.png" alt="Wearm School" loading="lazy"></span>
+              <div>
+                <span class="date">Jan — May 2021</span>
+                <h4>Digital Art · Diploma with honours</h4>
+                <p class="where">Wearm School · Armenia</p>
+                <p>Graphic design and visual identity, motion design in After Effects, illustration and vector design, audio &amp; video editing. Selected as one of the top students and moved on to an internship, later joining 44 Factory.</p>
+              </div>
+            </li>
+            <li>
+              <span class="logo logo-mark"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></span>
+              <div>
+                <span class="date">2018 — 2021</span>
+                <h4>College</h4>
+                <p class="where">Secondary vocational education</p>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="h3">Languages</h3>
+          <ul class="bars">
+            <li><span>Armenian</span><b>Native</b><i style="--v:100%"></i></li>
+            <li><span>Russian</span><b>Fluent</b><i style="--v:75%"></i></li>
+            <li><span>English</span><b>Intermediate</b><i style="--v:50%"></i></li>
+          </ul>
+        </section>
+
+        <!-- ================= PORTFOLIO ================= -->
+        <section class="section" id="portfolio">
+          <div class="works-head">
+            <h2 class="h2">Portfolio</h2>
+            <div class="filters" role="tablist">
+              <button class="is-on" data-filter="all">All</button>
+              <button data-filter="branding">Branding</button>
+              <button data-filter="shopify">Shopify</button>
+            </div>
+          </div>
+          <div class="works">
+            <a class="work work-video" data-cat="shopify" href="assets/videos/strata.mp4"
+               data-video="assets/videos/strata.mp4" data-poster="assets/works/strata.jpg"
+               data-desc="A custom Shopify theme I designed and developed from scratch for STRATA, a smart-tumbler brand concept: scroll-driven product scenes, interactive feature tabs, an ajax cart and a full mobile version. Everything is editable in the Shopify theme editor."
+               data-links="Watch on LinkedIn|https://www.linkedin.com/feed/update/urn:li:activity:7525968558653136896/">
+              <div class="thumb"><img src="assets/works/strata.jpg" alt="STRATA custom Shopify theme" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 47s</span></div>
+              <h4>STRATA</h4>
+              <p>Shopify · custom theme from scratch</p>
+            </a>
+            <a class="work work-video" data-cat="shopify" href="assets/videos/jewelry-store.mp4"
+               data-video="assets/videos/jewelry-store.mp4" data-poster="assets/works/jewelry-store.jpg"
+               data-desc="A high-end jewelry store on Shopify's Dawn theme with a custom header and mega menu, desktop and mobile. Course project recreating cartier.com — not affiliated with Cartier."
+               data-links="See on LinkedIn|https://www.linkedin.com/in/gor-kh/">
+              <div class="thumb"><img src="assets/works/jewelry-store.jpg" alt="Luxury jewelry Shopify store" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 38s</span></div>
+              <h4>Luxury jewelry store</h4>
+              <p>Shopify · Dawn · course project</p>
+            </a>
+            <a class="work" data-cat="branding" href="https://www.behance.net/gallery/215456607/Reverse-Company-Branding" target="_blank" rel="noopener">
+              <div class="thumb"><img src="assets/works/reverse.jpg" alt="Reverse Company brand book" loading="lazy"><span>Behance ↗</span></div>
+              <h4>Reverse Company</h4>
+              <p>Branding · Brand book · 2024</p>
+            </a>
+            <a class="work" data-cat="branding" href="https://www.behance.net/gallery/215587757/Mowin-Company-Rebranding" target="_blank" rel="noopener">
+              <div class="thumb"><img src="assets/works/mowin.jpg" alt="Mowin Company brand book" loading="lazy"><span>Behance ↗</span></div>
+              <h4>Mowin Company</h4>
+              <p>Rebranding · Brand book</p>
+            </a>
+          </div>
+          <a class="more-link" href="https://www.behance.net/44factory" target="_blank" rel="noopener">
+            <span><b>Branding showcase</b> — more brand identities and logos on Behance</span>
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section" id="contact">
+          <h2 class="h2">Contact</h2>
+
+          <h3 class="h3">Contact me</h3>
+          <p class="sub">Launching a store or want to refresh the one you have? Send me a message — I reply within one day.</p>
+
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:gordrak2017@yandex.com">gordrak2017@yandex.com</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/gor-kh/" target="_blank" rel="noopener">linkedin.com/in/gor-kh</a></li>
+            <li><span>Behance</span><a href="https://www.behance.net/gorkh" target="_blank" rel="noopener">behance.net/gorkh</a></li>
+            <li><span>Instagram</span><a href="https://www.instagram.com/gor.kh_/" target="_blank" rel="noopener">@gor.kh_</a></li>
+          </ul>
+
+          <form class="form" id="contact-form" novalidate>
+            <div class="row">
+              <label><span>Name</span><input name="name" required autocomplete="name"></label>
+              <label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+            </div>
+            <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+            <button class="btn btn-solid" type="submit">Send message
+              <svg viewBox="0 0 24 24"><path d="M22 3 11 14"/><path d="M22 3 15 21l-4-7-7-4z"/></svg>
+            </button>
+          </form>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="foot">© <span id="year"></span> Gor Khachatryan</footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Case window for portfolio items (video or image) -->
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project">
+    <figure class="lightbox-fig">
+      <div class="lightbox-media">
+        <img alt="">
+        <video playsinline controls muted loop preload="none"></video>
+      </div>
+      <figcaption>
+        <div class="case-text"><h4></h4><p></p></div>
+        <div class="case-links"></div>
+      </figcaption>
+    </figure>
+    <button class="lightbox-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <!-- SVG filters for the liquid-glass refraction are generated here by script.js -->
+  <svg class="lg-defs" width="0" height="0" aria-hidden="true"><defs></defs></svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
