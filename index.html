@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script>
     // apply saved theme before paint
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -309,32 +309,47 @@
               <button class="is-on" data-filter="all">All</button>
               <button data-filter="branding">Branding</button>
               <button data-filter="shopify">Shopify</button>
+              <button data-filter="web">Web</button>
             </div>
           </div>
           <div class="works">
+            <a class="work work-video" data-cat="shopify" href="assets/videos/remi-coffee.mp4"
+               data-video="assets/videos/remi-coffee.mp4" data-poster="assets/works/remi-coffee.jpg"
+               data-desc="My own concept coffee brand, made end to end: packaging labels, 3D renders in Blender and a custom Shopify Online Store 2.0 theme. Colour columns open on hover and grow into the product page, with size and grind variants, an Ajax bag, a mood quiz and a phone layout of its own. Shown on a local preview.">
+              <div class="thumb"><img src="assets/works/remi-coffee.jpg" alt="REMI concept coffee store, a custom Shopify theme" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 49s</span></div>
+              <h4>REMI Coffee</h4>
+              <p>Shopify · theme · packaging · 3D</p>
+            </a>
             <a class="work work-video" data-cat="shopify" href="assets/videos/strata.mp4"
-               data-video="assets/videos/strata.mp4" data-poster="assets/works/strata.jpg"
+               data-video="assets/videos/strata.mp4" data-poster="assets/works/strata.jpg?v=2"
                data-desc="A custom Shopify theme I built from scratch for STRATA, my own smart-tumbler concept brand: scroll-driven product scenes, interactive feature tabs, an ajax cart and a full mobile version. Everything is editable in the Shopify theme editor."
                data-links="Watch on LinkedIn|https://www.linkedin.com/feed/update/urn:li:activity:7525968558653136896/">
-              <div class="thumb"><img src="assets/works/strata.jpg" alt="STRATA custom Shopify theme" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 47s</span></div>
+              <div class="thumb"><img src="assets/works/strata.jpg?v=2" alt="STRATA custom Shopify theme" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 47s</span></div>
               <h4>STRATA</h4>
               <p>Shopify · custom theme from scratch</p>
             </a>
             <a class="work work-video" data-cat="shopify" href="assets/videos/jewelry-store.mp4"
-               data-video="assets/videos/jewelry-store.mp4" data-poster="assets/works/jewelry-store.jpg"
+               data-video="assets/videos/jewelry-store.mp4" data-poster="assets/works/jewelry-store.jpg?v=2"
                data-desc="A high-end jewelry store on Shopify's Dawn theme with a custom header and mega menu, desktop and mobile. Course project recreating cartier.com — not affiliated with Cartier."
                data-links="See on LinkedIn|https://www.linkedin.com/in/gor-kh/">
-              <div class="thumb"><img src="assets/works/jewelry-store.jpg" alt="Luxury jewelry Shopify store" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 38s</span></div>
+              <div class="thumb"><img src="assets/works/jewelry-store.jpg?v=2" alt="Luxury jewelry Shopify store" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 38s</span></div>
               <h4>Luxury jewelry store</h4>
               <p>Shopify · Dawn · course project</p>
             </a>
+            <a class="work work-video" data-cat="web" href="assets/videos/liquid-glass.mp4"
+               data-video="assets/videos/liquid-glass.mp4" data-poster="assets/works/liquid-glass.jpg"
+               data-desc="A portfolio website I designed and coded from scratch: the site you're on now runs on the same code. Glass that bends the light behind it, sections that change without reloads, video case studies, light and dark mode. The same look can be built as a Shopify theme. The video uses demo content: the person and the companies are fictional, the projects are mine.">
+              <div class="thumb"><img src="assets/works/liquid-glass.jpg" alt="Liquid Glass portfolio website" loading="lazy"><i class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><span>Video · 57s</span></div>
+              <h4>Liquid Glass portfolio</h4>
+              <p>Web design · HTML, CSS, JS</p>
+            </a>
             <a class="work" data-cat="branding" href="https://www.behance.net/gallery/215456607/Reverse-Company-Branding" target="_blank" rel="noopener">
-              <div class="thumb"><img src="assets/works/reverse.jpg" alt="Reverse Company brand book" loading="lazy"><span>Behance ↗</span></div>
+              <div class="thumb"><img src="assets/works/reverse.jpg?v=2" alt="Reverse Company brand book" loading="lazy"><span>Behance ↗</span></div>
               <h4>Reverse Company</h4>
               <p>Branding · Brand book · 2024</p>
             </a>
             <a class="work" data-cat="branding" href="https://www.behance.net/gallery/215587757/Mowin-Company-Rebranding" target="_blank" rel="noopener">
-              <div class="thumb"><img src="assets/works/mowin.jpg" alt="Mowin Company brand book" loading="lazy"><span>Behance ↗</span></div>
+              <div class="thumb"><img src="assets/works/mowin.jpg?v=2" alt="Mowin Company brand book" loading="lazy"><span>Behance ↗</span></div>
               <h4>Mowin Company</h4>
               <p>Rebranding · Brand book</p>
             </a>
