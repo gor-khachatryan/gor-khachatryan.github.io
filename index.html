@@ -25,20 +25,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <script>
     // apply saved theme before paint
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    // opening animation, played by script.js; if script.js has not started within 4 s, the site is shown without it
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro');
+      window.introFailsafe = setTimeout(() => document.documentElement.classList.remove('intro'), 4000);
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    }
   </script>
 </head>
 <body>
 
+  <!-- ===== Opening animation: a glass lens over the gathered colours, then it flies into the photo ===== -->
+  <div class="intro-stage" aria-hidden="true">
+    <svg class="intro-ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96"/></svg>
+    <div class="intro-lens">
+      <img src="assets/photo.jpg?v=3" alt="" width="320" height="320">
+      <span class="intro-mark"><span>G<i>.</i></span></span>
+    </div>
+  </div>
+
   <!-- ===== Background: color blobs + vertical lines with falling light ===== -->
   <div class="bg" aria-hidden="true">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-    <div class="blob b4"></div>
+    <div class="blobs">
+      <div class="swirl">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+        <div class="blob b4"></div>
+      </div>
+    </div>
     <div class="grid"></div>
     <div class="lines"></div>
   </div>
@@ -416,6 +435,6 @@
   <!-- SVG filters for the liquid-glass refraction are generated here by script.js -->
   <svg class="lg-defs" width="0" height="0" aria-hidden="true"><defs></defs></svg>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

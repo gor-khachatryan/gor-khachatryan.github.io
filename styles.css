@@ -103,6 +103,7 @@ ul, ol { list-style: none; }
 
 /* ---------- background ---------- */
 .bg { position: fixed; inset: 0; overflow: hidden; z-index: 0; }
+.blobs, .swirl { position: absolute; inset: 0; }
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -579,6 +580,75 @@ ul, ol { list-style: none; }
 .toast.is-on { transform: translate(-50%, 0); opacity: 1; }
 
 .lg-defs { position: absolute; }
+
+/* =========================================================
+   OPENING ANIMATION
+   html.intro is set in <head>; script.js plays it and then removes the class.
+   1. loading: a glass lens over the colour field gathered in the centre bends the grid behind it,
+      a thin ring fills as the fonts, the photo and the page arrive
+   2. "G" gets its amber dot, the lens flies into the photo, the card's glass opens out of it,
+      then the panel, the menu and the background follow
+   ========================================================= */
+.intro-stage { display: none; }
+html.intro body { overflow: hidden; }
+html.intro .intro-stage { display: block; position: fixed; inset: 0; z-index: 100; cursor: progress; }
+html.intro :is(.nav, .card, .panel, .foot, .lines) { opacity: 0; }
+/* the colour field, gathered small in the centre and turning; blurred on screen (the parent of the scaled box,
+   so the blur is not scaled down with it) into a soft glow behind the lens */
+html.intro .swirl { scale: .26; animation: introSwirl 3s var(--ease) both; }
+html.intro .blobs { filter: blur(60px); }
+@media (max-width: 900px) { html.intro .swirl { scale: .45; } }   /* the blobs are sized in vmax: small on a phone */
+@keyframes introSwirl { from { rotate: -150deg; opacity: 0; } 22% { opacity: 1; } to { rotate: 0deg; opacity: 1; } }
+
+.intro-lens {
+  position: absolute; left: 50%; top: 50%; z-index: 1;
+  width: 148px; height: 148px; margin: -74px 0 0 -74px; border-radius: 50%;
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: blur(.6px) saturate(160%);
+  backdrop-filter: blur(.6px) saturate(160%);
+  box-shadow: var(--glass-shadow);
+  animation: lensIn 1s var(--spring) .1s both;
+}
+.intro-lens.refract { backdrop-filter: var(--lg-filter) blur(.6px) saturate(160%); }
+/* rim and highlight, as on the site's glass */
+.intro-lens::before {
+  content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 1.2px;
+  background: linear-gradient(135deg, var(--glass-rim-a), var(--glass-rim-b) 30%, transparent 50%, var(--glass-rim-b) 75%, var(--glass-rim-a));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.intro-lens::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit;
+  background: radial-gradient(124px circle at 30% -8%, rgba(255, 255, 255, .2), transparent 60%);
+}
+[data-theme="light"] .intro-lens::after { background: radial-gradient(124px circle at 30% -8%, rgba(255, 255, 255, .7), transparent 60%); }
+.intro-lens img {
+  position: absolute; inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px);
+  border-radius: 50%; object-fit: cover; opacity: 0;
+}
+.intro-mark {
+  position: absolute; inset: 0; z-index: 1; display: grid; place-items: center;
+  font: 600 54px/1 var(--font); letter-spacing: -.045em; color: var(--ink);
+  opacity: 0; translate: 0 10px;
+  transition: opacity .6s var(--ease), translate .8s var(--ease);
+}
+.intro-stage.has-font .intro-mark { opacity: 1; translate: 0 0; }
+.intro-mark i { font-style: normal; color: var(--accent); display: inline-block; scale: 0; transform-origin: 50% 85%; transition: scale .5s var(--spring); }
+.intro-stage.is-done .intro-mark i { scale: 1; }
+
+.intro-ring {
+  position: absolute; left: 50%; top: 50%;
+  width: 200px; height: 200px; margin: -100px 0 0 -100px;
+  rotate: -90deg; overflow: visible;
+  animation: ringIn .9s var(--ease) .3s both;
+}
+.intro-ring circle {
+  fill: none; stroke: var(--ink); stroke-opacity: .42; stroke-width: 1.2; stroke-linecap: round;
+  stroke-dasharray: 604; stroke-dashoffset: 604;
+}
+@keyframes lensIn { from { opacity: 0; scale: .5; } }
+@keyframes ringIn { from { opacity: 0; scale: .86; } }
 
 /* =========================================================
    RESPONSIVE
